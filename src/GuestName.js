@@ -5,7 +5,9 @@ const GuestName = props => {
   if (props.isEditing) {
     return (
       <input type='text'
-        value={props.children} />
+        value={props.children} 
+          onChange={props.handleNameEdits}
+        />
     );
   }
 
@@ -21,6 +23,7 @@ const GuestName = props => {
 GuestName.propTypes = {
 
   isEditing: PropTypes.bool.isRequired,
+  handleNameEdits: PropTypes.func.isRequired
 
 }
 

@@ -19,7 +19,7 @@ class App extends Component {
       {
         name: 'John',
         isConfirmed: true,
-        isEditing: true
+        isEditing: false
       }
     ]
   }
@@ -33,7 +33,20 @@ class App extends Component {
           return {
             ...guest,
             [property]: !guest[property]
+          }
+        }
+        return guest;
+      })
+    })
+  }
 
+  setNameAt = (name, indexToChange) => {
+    this.setState({
+      guests: this.state.guests.map((guest, index) => {
+        if (index === indexToChange) {
+          return {
+            ...guest,
+            name
           }
         }
         return guest;
@@ -92,6 +105,7 @@ class App extends Component {
           <GuestList guests={this.state.guests}
             toggleConfirmationAt={this.toggleConfirmationAt}
             toggleEditingAt={this.toggleEditingnAt}
+            setNameAt={this.setNameAt}
           />
         </div>
       </div>
