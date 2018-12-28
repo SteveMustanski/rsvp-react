@@ -110,7 +110,7 @@ class App extends Component {
       <div className="App">
         <Header newGuestSubmitHandler = {this.newGuestSubmitHandler}
           handleNameInput = {this.handleNameInput}
-          pendingGuest = {this.pendingGuest}
+          pendingGuest = {this.state.pendingGuest}
 
         />
         <div className="main">
