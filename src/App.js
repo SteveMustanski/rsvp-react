@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import GuestList from './GuestList';
-import Counter from  './Counter';
+import Counter from './Counter';
 
 class App extends Component {
 
@@ -60,7 +60,7 @@ class App extends Component {
   toggleConfirmationAt = index =>
     this.toggleGuestPropertyAt("isConfirmed", index);
 
-  removeGuestAt = index => 
+  removeGuestAt = index =>
     this.setState({
       guests: [
         ...this.state.guests.slice(0, index),
@@ -97,13 +97,13 @@ class App extends Component {
   // get the total number of invited guests
   getTotalInvited = () => this.state.guests.length;
 
-  // getAttendingGuests = () =>
-
-  // getUnconfirmedGuests = () =>
-
+  getAttendingGuests = () =>
+    this.state.guests.reduce((total, guest) => guest.isConfirmed ? total + 1 : total, 0);
 
   render() {
     const totalInvited = this.getTotalInvited();
+    const numberAttending = this.getAttendingGuests();
+    const numberUnconfirmed = totalInvited - numberAttending;
     return (
       <div className="App">
         <header>
@@ -129,8 +129,11 @@ class App extends Component {
           </label>
           </div>
 
-          <Counter 
-          totalInvited = {totalInvited}/>
+          <Counter
+            totalInvited={totalInvited}
+            numberAttending={numberAttending}
+            numberUnconfirmed={numberUnconfirmed}
+          />
 
           <GuestList guests={this.state.guests}
             toggleConfirmationAt={this.toggleConfirmationAt}

@@ -1,3 +1,5 @@
+// Counter displays the stats for number attending, unconfirmed, and total guests
+
 import React from 'react';
 import Proptypes from 'prop-types';
 
