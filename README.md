@@ -5,6 +5,8 @@ Users can add, remove, and edit guests.
 
 The app also keeps track of the status of the list with the number of guests and the number of confirmed/unconfirmed guests.
 
+You can try out the [RSVP app here](https://stevemustanski.github.io/rsvp-react/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
