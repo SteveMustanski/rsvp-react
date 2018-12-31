@@ -35,10 +35,10 @@ newGuestId = ()=> {
     })
   }
 
-  setName = (name, idToChange) => {
+  setName = (name, id) => {
     this.setState({
-      guests: this.state.guests.map((guest, id) => {
-        if (id === idToChange) {
+      guests: this.state.guests.map((guest) => {
+        if (id === guest.id) {
           return {
             ...guest,
             name
@@ -58,7 +58,7 @@ newGuestId = ()=> {
     });
 
 
-  toggleEditingn = id =>
+  toggleEditing = id =>
     this.toggleGuestProperty("isEditing", id);
 
   toggleFilter = () =>
@@ -122,7 +122,7 @@ newGuestId = ()=> {
 
           <GuestList guests={this.state.guests}
             toggleConfirmation={this.toggleConfirmation}
-            toggleEditing={this.toggleEditingn}
+            toggleEditing={this.toggleEditing}
             setName={this.setName}
             isFiltered={this.state.isFiltered}
             removeGuest={this.removeGuest}

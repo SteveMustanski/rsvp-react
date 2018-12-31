@@ -8,9 +8,9 @@ const GuestList = props =>
     <PendingGuest name={props.pendingGuest} />
     {props.guests
     .filter(guest => !props.isFiltered || guest.isConfirmed)
-    .map((guest, id) =>
+    .map((guest, index) =>
       <Guest
-        key={id}
+        key={index}
         name={guest.name}
         isConfirmed={guest.isConfirmed}
         isEditing={guest.isEditing}
