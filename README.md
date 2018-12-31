@@ -5,6 +5,8 @@ Users can add, remove, and edit guests.
 
 The app also keeps track of the status of the list with the number of guests and the number of confirmed/unconfirmed guests.
 
+The user list is stored in an array that only exists for the duration of the session.  A possible future enhancement is to add database or local storage to persist the invitee list.
+
 You can try out the [RSVP app here](https://stevemustanski.github.io/rsvp-react/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -54,5 +56,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## To Do
 
-* Host on github pages or Heroku
 * Connect to local storage or database
